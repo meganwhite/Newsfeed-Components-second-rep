@@ -155,6 +155,12 @@ function createArticle(title,date,p1,p2,p3) {
   // add event listener to expand button
   expandButton.addEventListener('click', event => {
     article.classList.toggle('article-open');
+    if (article.classList.contains('article-open')) {
+      expandButton.textContent = 'Close';
+    }
+    else {
+      expandButton.textContent = 'Expand';
+    }
   })
 
   return article;
