@@ -85,6 +85,18 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'The Princess Bride',
+    date: 'September 25th, 1987',
+    firstParagraph: `Inconceivable!`,
+
+    secondParagraph: `True love is the best thing in the world, except for cough drops.`,
+
+    thirdParagraph: `Your true love lives. And you marry another. True Love saved her in the Fire Swamp, 
+    and she treated it like garbage. And that’s what she is, the Queen of Refuse. So bow down to her if you want, 
+    bow to her. Bow to the Queen of Slime, the Queen of Filth, the Queen of Putrescence. Boo. Boo. Rubbish. Filth. 
+    Slime. Muck. Boo. Boo. Boo.`
   }
 ];
 
