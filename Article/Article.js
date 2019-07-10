@@ -113,36 +113,43 @@ const data = [
 
 */
 
+const articles = document.querySelector('.articles');
+
+data.forEach(data => {
+  articles.appendChild(createArticle(data.title,data.date,data.firstParagraph,
+    data.secondParagraph,data.thirdParagraph))
+})
+
 
 function createArticle(title,date,p1,p2,p3) {
   // define new elements
   const article = document.createElement('div');
-  const title = document.createElement('h2');
-  const date = document.createElement('p');
-  const p1 = document.createElement('p');
-  const p2 = document.createElement('p');
-  const p3 = document.createElement('p');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
   const expandButton = document.createElement('span');
 
   // set up structure of elements
-  article.appendChild(title);
-  article.appendChild(date);
-  article.appendChild(p1);
-  article.appendChild(p2);
-  article.appendChild(p3);
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
   article.appendChild(expandButton);
 
   // set class names
   article.classList.add('article');
-  date.classList.add('date');
+  articleDate.classList.add('date');
   expandButton.classList.add('expandButton');
 
   // set text content
-  title.textContent = title;
-  date.textContent = date;
-  p1.textContent = p1;
-  p2.textContent = p2;
-  p3.textContent = p3;
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  para1.textContent = p1;
+  para2.textContent = p2;
+  para3.textContent = p3;
   expandButton.textContent = 'Expand';
   
   // add event listener to expand button
