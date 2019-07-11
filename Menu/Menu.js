@@ -49,17 +49,28 @@ function createMenu(array) {
   menu.classList.add('menu');
   
   // Iterate over array to create a list item for each element and add to <ul>
+  let menuText = [];
   for(let i = 0; i < menuItems.length; i++) {
     let menuItem = document.createElement('li');
     menuItem.textContent= array[i];
+    menuItem.className = 'menuItem';
+    menuText.push(menuItem);
     menuList.appendChild(menuItem);
   }
+  console.log(menuText);
 
   // add click handler to menu button
   const menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', event => {
     menu.classList.toggle('menu--open');
+    menuList.classList.toggle('menu--open')
+    menuText.forEach(item => {
+      item.classList.toggle('menu--openItems')
+    })
+    
   })
 
   return menu;
 }
+
+
