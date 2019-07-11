@@ -1,5 +1,5 @@
 /* This is the data we will be using to create our article components */
-/* Look over this data, then proceed to line 91*/
+/* Look over this data, then proceed to line 91*/  
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -85,6 +85,18 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'The Princess Bride',
+    date: 'September 25th, 1987',
+    firstParagraph: `Inconceivable!`,
+
+    secondParagraph: `True love is the best thing in the world, except for cough drops.`,
+
+    thirdParagraph: `Your true love lives. And you marry another. True Love saved her in the Fire Swamp, 
+    and she treated it like garbage. And that’s what she is, the Queen of Refuse. So bow down to her if you want, 
+    bow to her. Bow to the Queen of Slime, the Queen of Filth, the Queen of Putrescence. Boo. Boo. Rubbish. Filth. 
+    Slime. Muck. Boo. Boo. Boo.`
   }
 ];
 
@@ -112,3 +124,56 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+const articles = document.querySelector('.articles');
+
+data.forEach(data => {
+  articles.appendChild(createArticle(data.title,data.date,data.firstParagraph,
+    data.secondParagraph,data.thirdParagraph))
+})
+
+
+function createArticle(title,date,p1,p2,p3) {
+  // define new elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const expandButton = document.createElement('span');
+
+  // set up structure of elements
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(para1);
+  article.appendChild(para2);
+  article.appendChild(para3);
+  article.appendChild(expandButton);
+
+  // set class names
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+
+  // set text content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  para1.textContent = p1;
+  para2.textContent = p2;
+  para3.textContent = p3;
+  expandButton.textContent = 'Expand';
+  
+  // add event listener to expand button
+  expandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open');
+    if (article.classList.contains('article-open')) {
+      expandButton.textContent = 'Close';
+    }
+    else {
+      expandButton.textContent = 'Expand';
+    }
+  })
+
+  return article;
+}
